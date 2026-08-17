@@ -8,7 +8,7 @@ jobs:
   cmake:
     runs-on: ubuntu-latest
     container:
-      image: madduci/docker-msvc-cpp:latest
+      image: madduci/docker-wine-msvc:latest
       volumes:
         - /var/run/pcscd/pcscd.comm:/var/run/pcscd/pcscd.comm
     steps:
