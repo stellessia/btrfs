@@ -1,11 +1,14 @@
 name: build
-on: [push]
+on:
+  workflow_dispatch:
+  push:
 env:
    PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/etc/eselect/wine/bin
 jobs:
   cmake:
-    runs-on: msvc-wine
+    runs-on: ubuntu-latest
     container:
+      image: madduci/docker-msvc-cpp:latest
       volumes:
         - /var/run/pcscd/pcscd.comm:/var/run/pcscd/pcscd.comm
     steps:
